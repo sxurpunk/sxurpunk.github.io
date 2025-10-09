@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+.main_header
+{
+    display:flex;
+    flex-direction:row;
+    font-family: Inter;
+}
+
+.main_body
+{
+    display:flex;
+    flex-direction:column;
+    font-family: Inter; 
+    background-color: #f8f9fa;
+}
+
+.main_footer
+{
+    display:flex;
+    flex-direction:row;
+    font-family: Inter;
+}
+
+.uni_name
+{
+    display: flex;
+    flex-direction: row;
+    img
+    {
+        max-width:50px;
+        max-height: 50px;
+    }
+}
+
+.header_element
+{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
+}
+
+.main_title
+{
+    text-align: center;
+    line-height: 100px;
+    margin: 0;
+    font-family: Inter;
+}
