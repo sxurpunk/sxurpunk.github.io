@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         restaurants.forEach(function(restaurant) {
             const item = document.createElement('div');
             item.textContent = restaurant.name;
-            item.classList.add('restaurant.name');
+            item.className = 'restaurant-item';
             firstDiv.appendChild(item);
         })
         displayButton.disabled = true;
