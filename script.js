@@ -125,14 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // YOUR CODE HERE:
         filteredList.innerHTML = '';
         
+        const cheapRestaurant = restaurants.filter(function(restaurant) {
+            restaurant.priceRange === '$' || restaurant.priceRange === '$$';
+        })
+
         const secondDiv = document.getElementById("filtered-list");
-        const cheapRestaurants = restaurants.filter(function(restaurant) {
+        cheapRestaurant.forEach(function(restaurant) {
             const item = document.createElement('div');
-            if (restaurant.priceRange === '$' || restaurant.priceRange === '$$')
-                item.textContent = restaurant.name;
-            item.className = 'restaurant-name';
+            item.textContent = restaurant.name;
+            item.className = 'restaurant-item';
             secondDiv.appendChild(item);
         })
+        displayButton.disabled = true;
         
     });
     
