@@ -97,7 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hint: restaurants.forEach(function(restaurant) { })
         
         // YOUR CODE HERE:
-        
+
+        const firstDiv = document.getElementById("restaurant-list");
+        restaurants.forEach(function(restaurant) {
+            const item = document.createElement('div');
+            item.textContent = restaurant.name;
+            item.classList.add('restaurant.name');
+            firstDiv.appendChild(item);
+        })
         
     });
     
