@@ -123,7 +123,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hint: const cheapRestaurants = restaurants.filter(function(restaurant) { })
         
         // YOUR CODE HERE:
+        restaurantList.innerHTML = '';
         
+        const secondDiv = document.getElementById("restaurant-list");
+        const cheapRestaurants = restaurants.filter(function(restaurant) {
+            const item = document.createElement('div');
+            item.textContent = restaurant.priceRange === '$' || restaurant.priceRange === '$$';
+            item.className = 'restaurant-name';
+            secondDiv.appendChild(item);
+        })
         
     });
     
