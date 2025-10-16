@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
         const secondDiv = document.getElementById("filtered-list");
-        cheapRestaurant.forEach(function(restaurant) {
+        restaurants.forEach(function(cheapRestaurant) {
             const item = document.createElement('div');
             item.textContent = restaurant.name;
             item.className = 'restaurant-item';
