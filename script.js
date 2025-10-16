@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hint: const cheapRestaurants = restaurants.filter(function(restaurant) { })
         
         // YOUR CODE HERE:
-        restaurantList.innerHTML = '';
+        filteredList.innerHTML = '';
         
         const secondDiv = document.getElementById("restaurant-list");
         const cheapRestaurants = restaurants.filter(function(restaurant) {
