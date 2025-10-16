@@ -130,12 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
         })
 
         const secondDiv = document.getElementById("filtered-list");
-        restaurants.forEach(function(cheapRestaurant) {
             const item = document.createElement('div');
-            item.textContent = restaurant.name;
+            item.textContent = cheapRestaurant.name;
             item.className = 'restaurant-item';
             secondDiv.appendChild(item);
-        })
         displayButton.disabled = true;
         
     });
