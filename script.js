@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hint: restaurants.forEach(function(restaurant) { })
         
         // YOUR CODE HERE:
+        restaurantList.innerHTML = '';
 
         const firstDiv = document.getElementById("restaurant-list");
         restaurants.forEach(function(restaurant) {
