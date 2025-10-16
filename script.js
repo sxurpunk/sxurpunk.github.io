@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
             item.classList.add('restaurant.name');
             firstDiv.appendChild(item);
         })
+        displayButton.disabled = true;
         
     });
     
