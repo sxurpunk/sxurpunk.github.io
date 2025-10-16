@@ -105,10 +105,12 @@ document.addEventListener('DOMContentLoaded', function() {
             item.textContent = restaurant.name;
             item.className = 'restaurant-item';
             firstDiv.appendChild(item);
-            const item2= document.createElement('div');
-            item2.textContent = restaurant.cuisine;
-            item2.className = 'restaurant-cuisine;
-            firstDiv.appendChild(item2);
+        })
+        restaurants.forEach(function(restaurant) {
+            const item = document.createElement('div');
+            item.textContent = restaurant.cuisine;
+            item.className = 'restaurant-cuisine';
+            firstDiv.appendChild(item);
         })
         displayButton.disabled = true;
         
