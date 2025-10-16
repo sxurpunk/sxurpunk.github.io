@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             item.className = 'restaurant-item';
             firstDiv.appendChild(item);
         })
+        const firstDiv = document.getElementById("restaurant-list");
         restaurants.forEach(function(restaurant) {
             const item = document.createElement('div');
             item.textContent = restaurant.cuisine;
