@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // YOUR CODE HERE:
             statusDisplay.className = 'statusDisplay.success';
             statusMessage.textContent = 'Success!';
+            console.log('data loaded');
             toggleMethodButtons(true);
             loadButton.disabled = false;
             
