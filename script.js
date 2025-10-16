@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const secondDiv = document.getElementById("filtered-list");
         const cheapRestaurants = restaurants.filter(function(restaurant) {
             const item = document.createElement('div');
-            item.textContent = restaurant.priceRange === '$' || restaurant.priceRange === '$$';
+            if (restaurant.priceRange === '$' || restaurant.priceRange === '$$')
+                item.textContent = restaurant.name;
             item.className = 'restaurant-name';
             secondDiv.appendChild(item);
         })
