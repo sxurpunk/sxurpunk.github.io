@@ -106,13 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
             item.className = 'restaurant-item';
             firstDiv.appendChild(item);
         })
-        const secondDiv = document.getElementById("restaurant-list");
-        restaurants.forEach(function(restaurant) {
-            const item = document.createElement('div');
-            item.textContent = restaurant.cuisine;
-            item.className = 'restaurant-cuisine';
-            secondDiv.appendChild(item);
-        })
         displayButton.disabled = true;
         
     });
