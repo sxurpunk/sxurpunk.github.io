@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // YOUR CODE HERE:
         filteredList.innerHTML = '';
         
-        const secondDiv = document.getElementById("restaurant-list");
+        const secondDiv = document.getElementById("filtered-list");
         const cheapRestaurants = restaurants.filter(function(restaurant) {
             const item = document.createElement('div');
             item.textContent = restaurant.priceRange === '$' || restaurant.priceRange === '$$';
