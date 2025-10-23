@@ -1,274 +1,97 @@
+import showCards from './editable_js/template_cards.js';
+import showCategories from './editable_js/template_category.js';
+import showStats from './editable_js/template_stats.js';
+import showTable from './editable_js/template_table.js';
+
+import loadData from './editable_js/load_data.js';
 
 // ============================================
-// TUTORIAL 6: LOAD REAL DATA
-// From static data to async data loading
+// DISPLAY MANAGEMENT - PROVIDED
 // ============================================
 
-// Global variable to store loaded restaurant data
-let restaurants = [];
+/**
+ * Update the display with new content
+ */
+function updateDisplay(content) {
+  document.getElementById("data-display").innerHTML = content;
+}
 
-// Wait for the page to load
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Tutorial 6: Async data loading ready!');
-    
-    // Get UI elements
-    const loadButton = document.querySelector('#load-data-button');
-    const statusDisplay = document.querySelector('#loading-status');
-    const statusMessage = statusDisplay.querySelector('.status-message');
-    
-    // Get the method buttons (start disabled)
-    const displayButton = document.querySelector('#display-button');
-    const filterButton = document.querySelector('#filter-button');
-    const mapButton = document.querySelector('#map-button');
-    const errorButton = document.querySelector('#error-button');
-    
-    // ============================================
-    // MAIN DATA LOADING FUNCTION
-    // ============================================
-    
-    // This is the key new skill - loading data asynchronously
-    loadButton.addEventListener('click', async function() {
-        
-        // Step 1: Show loading state
-        // Hint: Change statusDisplay classes and statusMessage text
-        // Hint: Disable the load button while loading
-        
-        // YOUR CODE HERE:
-        loadButton.disabled = true;
-        statusDisplay.className = 'statusDisplay.loading';
-        statusMessage.textContent = 'Loading...';
-        
-        try {
-            // Step 2: Use fetch() to load data
-            // Hint: const response = await fetch('restaurants.json');
-            // Hint: Check if response.ok before continuing
-            
-            // Step 3: Convert response to JSON
-            // Hint: const data = await response.json();
-            
-            // Step 4: Store data in global variable
-            // Hint: restaurants = data;
-            
-            // YOUR CODE HERE:
-            const response = await fetch('restaurants.json');
-            if (!response.ok) throw new Error('Load failed');
-                const data = await response.json();
-                restaurants = data;
-                updateStatus('success', 'Loaded');
-            
-            // Step 5: Show success state and enable buttons
-            // Hint: Update statusDisplay classes and message
-            // Hint: Enable all the method buttons
-            
-            // YOUR CODE HERE:
-            statusDisplay.className = 'statusDisplay.success';
-            statusMessage.textContent = 'Success!';
-            console.log('data loaded');
-            toggleMethodButtons(true);
-            loadButton.disabled = false;
-            
-        } catch (error) {
-            // Step 6: Handle errors gracefully
-            // Hint: Show error state with user-friendly message
-            // Hint: Log the actual error for debugging
-            
-            // YOUR CODE HERE:
-            statusDisplay.className = 'statusDisplay.error';
-            console.error('load failed:', error);
-            updateStatus('error', 'Load failed');
-        }
-    });
-    
-    // ============================================
-    // ARRAY METHOD FUNCTIONS - Same as Tutorial 5
-    // ============================================
-    
-    // Display all restaurants (same as Tutorial 5, but using loaded data)
-    displayButton.addEventListener('click', function() {
-        const restaurantList = document.querySelector('#restaurant-list');
-        
-        // Check if we have data first
-        if (restaurants.length === 0) {
-            restaurantList.innerHTML = '<p class="placeholder">No data loaded yet</p>';
-            return;
-        }
-        
-        // Step 7: Use the same forEach logic from Tutorial 5
-        // Hint: restaurants.forEach(function(restaurant) { })
-        
-        // YOUR CODE HERE:
-        restaurantList.innerHTML = '';
+/**
+ * Update button states
+ */
+function updateButtonStates(activeView) {
+  document.querySelectorAll(".view-button").forEach((button) => {
+    button.classList.remove("active");
+  });
+  document.getElementById(`btn-${activeView}`).classList.add("active");
+}
 
-        const firstDiv = document.getElementById("restaurant-list");
-        restaurants.forEach(function(restaurant) {
-            const item = document.createElement('div');
-            item.textContent = restaurant.name;
-            item.className = 'restaurant-item';
-            firstDiv.appendChild(item);
-        })
-        displayButton.disabled = true;
-        
-    });
-    
-    // Filter cheap restaurants (same logic, loaded data)
-    filterButton.addEventListener('click', function() {
-        const filteredList = document.querySelector('#filtered-list');
-        
-        if (restaurants.length === 0) {
-            filteredList.innerHTML = '<p class="placeholder">No data loaded yet</p>';
-            return;
-        }
-        
-        // Step 8: Use the same filter logic from Tutorial 5
-        // Hint: const cheapRestaurants = restaurants.filter(function(restaurant) { })
-        
-        // YOUR CODE HERE:
-        filteredList.innerHTML = '';
-        
-        const cheapRestaurant = restaurants.filter(function(restaurant) {
-            restaurant.priceRange === '$' || restaurant.priceRange === '$$';
-        })
+/**
+ * Show loading state
+ */
+function showLoading() {
+  updateDisplay('<div class="loading">Loading data from API...</div>');
+}
 
-        const secondDiv = document.getElementById("filtered-list");
-            const item = document.createElement('div');
-            item.textContent = cheapRestaurant.name;
-            item.className = 'restaurant-item';
-            secondDiv.appendChild(item);
-        displayButton.disabled = true;
-        
-    });
-    
-    // Show restaurant names (same logic, loaded data)
-    mapButton.addEventListener('click', function() {
-        const mappedList = document.querySelector('#mapped-list');
-        
-        if (restaurants.length === 0) {
-            mappedList.innerHTML = '<p class="placeholder">No data loaded yet</p>';
-            return;
-        }
-        
-        // Step 9: Use the same map logic from Tutorial 5
-        // Hint: const names = restaurants.map(function(restaurant) { })
-        
-        // YOUR CODE HERE:
-        
-        
-    });
-    
-    // ============================================
-    // ERROR HANDLING DEMO
-    // ============================================
-    
-    // This demonstrates what happens when fetch() fails
-    errorButton.addEventListener('click', async function() {
-        const errorDisplay = document.querySelector('#error-display');
-        
-        errorDisplay.innerHTML = '<div class="status-display loading"><p class="status-message">Trying to load from bad URL...</p></div>';
-        
-        try {
-            // This will fail because the URL doesn't exist
-            const response = await fetch('nonexistent-file.json');
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const data = await response.json();
-            errorDisplay.innerHTML = '<p class="placeholder">This should not appear</p>';
-            
-        } catch (error) {
-            // Step 10: Show user-friendly error message
-            // Hint: Create error message div with helpful text
-            
-            // YOUR CODE HERE:
-            
-            
-            console.error('Demonstrated error:', error);
-        }
-    });
-    
+/**
+ * Show error state
+ */
+ /*html*/ 
+function showError(message) {
+  updateDisplay(`
+                <div class="error">
+                    <h3>Error Loading Data</h3>
+                    <p>${message}</p>
+                    <button onclick="location.reload()">Try Again</button>
+                </div>
+            `);
+}
+
+// ============================================
+// APPLICATION INITIALIZATION - PROVIDED
+// ============================================
+
+/**
+ * Main application function - handles data loading and button setup
+ * This pattern always works - no timing issues!
+ */
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("Starting application...");
+
+  try {
+    // Load data once
+    showLoading();
+    const data = await loadData();
+    console.log(`Loaded ${data.length} items from API`);
+
+    // Set up button event handlers - this pattern always works!
+    document.getElementById("btn-cards").onclick = () => {
+      updateDisplay(showCards(data));
+      updateButtonStates("cards");
+    };
+
+    document.getElementById("btn-table").onclick = () => {
+      updateDisplay(showTable(data));
+      updateButtonStates("table");
+    };
+
+    document.getElementById("btn-categories").onclick = () => {
+      updateDisplay(showCategories(data));
+      updateButtonStates("categories");
+    };
+
+    document.getElementById("btn-stats").onclick = () => {
+      updateDisplay(showStats(data));
+      updateButtonStates("stats");
+    };
+
+    // Show initial view
+    updateDisplay(showCards(data));
+    updateButtonStates("cards");
+
+    console.log("Application ready!");
+  } catch (error) {
+    console.error("Application failed to start:", error);
+    showError(error.message);
+  }
 });
-
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-// Helper function to enable/disable method buttons
-function toggleMethodButtons(enabled) {
-    const buttons = [
-        document.querySelector('#display-button'),
-        document.querySelector('#filter-button'),
-        document.querySelector('#map-button')
-    ];
-    
-    buttons.forEach(button => {
-        button.disabled = !enabled;
-    });
-}
-
-// Helper function to update status display
-function updateStatus(state, message) {
-    const statusDisplay = document.querySelector('#loading-status');
-    const statusMessage = statusDisplay.querySelector('.status-message');
-    
-    // Remove all state classes
-    statusDisplay.classList.remove('loading', 'success', 'error');
-    
-    // Add new state class
-    if (state !== 'ready') {
-        statusDisplay.classList.add(state);
-    }
-    
-    statusMessage.textContent = message;
-}
-
-// ============================================
-// DEBUGGING FUNCTIONS
-// ============================================
-
-// Check if data is loaded
-function checkDataStatus() {
-    console.log('=== Data Status ===');
-    console.log('Restaurants loaded:', restaurants.length);
-    if (restaurants.length > 0) {
-        console.log('First restaurant:', restaurants[0].name);
-        console.log('All restaurant names:', restaurants.map(r => r.name));
-    }
-    console.log('==================');
-}
-
-// Manually load data (for testing)
-async function manualLoadData() {
-    try {
-        const response = await fetch('restaurants.json');
-        if (!response.ok) throw new Error('Load failed');
-        const data = await response.json();
-        restaurants = data;
-        console.log(`Manually loaded ${restaurants.length} restaurants`);
-        toggleMethodButtons(true);
-        updateStatus('success', `Successfully loaded ${restaurants.length} restaurants`);
-    } catch (error) {
-        console.error('Manual load failed:', error);
-        updateStatus('error', 'Failed to load data');
-    }
-}
-
-// Reset everything
-function resetTutorial() {
-    restaurants = [];
-    toggleMethodButtons(false);
-    updateStatus('ready', 'Ready to load data');
-    
-    // Clear all displays
-    document.querySelector('#restaurant-list').innerHTML = '<p class="placeholder">Load data first, then click to display all restaurants</p>';
-    document.querySelector('#filtered-list').innerHTML = '<p class="placeholder">Load data first, then click to show only affordable restaurants</p>';
-    document.querySelector('#mapped-list').innerHTML = '<p class="placeholder">Load data first, then click to show just the restaurant names</p>';
-    document.querySelector('#error-display').innerHTML = '<p class="placeholder">Click to see error handling in action</p>';
-    
-    console.log('Tutorial reset');
-}
-
-// Call these functions in the browser console:
-// checkDataStatus() - see if data is loaded
-// manualLoadData() - load data without clicking button
-// resetTutorial() - reset everything for testing
