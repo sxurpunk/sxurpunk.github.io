@@ -12,7 +12,7 @@ async function loadData() {
     // const response = await fetch('https://api.nasa.gov/neo/rest/v1/feed?api_key=DEMO_KEY');
     // const data = await response.json();
 
-    const response = await fetch ('https://github.com/theneosloth/tekken-api/blob/main/data/json/jin.json')
+    const response = await fetch ('Access-Control-Allow-Origin: https://github.com/theneosloth/tekken-api/blob/main/data/json/jin.json')
     const data = await response.json();
     console.log("data loaded", data);
 
