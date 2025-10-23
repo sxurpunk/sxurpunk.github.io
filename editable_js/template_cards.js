@@ -7,22 +7,13 @@ function showCards(data) {
   const cardHTML = data
     .map(
        /*html*/ 
-      (restaurant) => `
+      (jin) => `
                 <div class="restaurant-card">
-                    <h3>${restaurant.name}</h3>
-                    <p><strong>Cuisine:</strong> ${restaurant.cuisine}</p>
-                    <p><strong>Rating:</strong> ${
-                      restaurant.rating
-                    }⭐ | <strong>Price:</strong> ${restaurant.priceRange}</p>
-                    <p><strong>Location:</strong> ${restaurant.neighborhood}</p>
-                    <p><strong>Phone:</strong> ${restaurant.phoneNumber}</p>
-                    <p><strong>Specialties:</strong> ${restaurant.specialties.join(
-                      ", "
-                    )}</p>
+                    <h3>${jin.command}</h3>
+                    <p><strong>Hit Level:</strong> ${jin.hit_level}</p>
                 </div>
             `
     )
-    .join("");
      /*html*/ 
   return `
                 <h2 class="view-title">🃏 Card View</h2>
