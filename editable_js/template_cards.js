@@ -16,7 +16,7 @@ function showCards(data) {
                     <p><strong>On-Block Frames</strong> ${jin.block_frame}</p>
                 </div>
             `
-    )
+    ).join("")
      /*html*/ 
   return `
                 <h2 class="view-title">🃏 Card View</h2>
