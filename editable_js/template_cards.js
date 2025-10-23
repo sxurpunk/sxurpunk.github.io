@@ -11,6 +11,9 @@ function showCards(data) {
                 <div class="restaurant-card">
                     <h3>${jin.command}</h3>
                     <p><strong>Hit Level:</strong> ${jin.hit_level}</p>
+                    <p><strong>Damage:</strong> ${jin.damage}</p>
+                    <p><strong>Startup Frames:</strong> ${jin.start_up_frame}</p>
+                    <p><strong>On-Block Frames</strong> ${jin.block_frame}</p>
                 </div>
             `
     )
