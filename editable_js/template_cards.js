@@ -19,8 +19,8 @@ function showCards(data) {
     ).join("")
      /*html*/ 
   return `
-                <h2 class="view-title">🃏 Card View</h2>
-                <p class="view-description">Browse restaurants as individual cards - perfect for comparing options</p>
+                <h2 class="view-title">All Moves</h2>
+                <p class="view-description">All of Jin Kazama's moves with inputs, damage, and frame data.</p>
                 <div class="card-grid">
                     ${cardHTML}
                 </div>
