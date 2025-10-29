@@ -9,6 +9,7 @@
     })
 
     plusOnBlockMoves.forEach(function(j) {
+    const tableHTML = j
     .map(
             /*html*/
             (j) => `
