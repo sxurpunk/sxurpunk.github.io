@@ -5,7 +5,7 @@
  */
 
 function showCards(data) {
-  -const cardHTML = data
+  const cardHTML = data
     .map(
        /*html*/ 
       (jin) => `
