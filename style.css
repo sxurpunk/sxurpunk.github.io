@@ -1,11 +1,11 @@
 /* BASE STYLES - Students can modify and extend */
 :root {
-    --primary-color: #black;
-    --secondary-color: #white;
+    --primary-color: black;
+    --secondary-color: white;
     --background-image: url("images/jin-kazama-tekken-tag-tournament-2-wallpaper.large.jpg");
-    --card-background: #black;
-    --text-color: #white;
-    --border-color: #white;
+    --card-background: black;
+    --text-color: white;
+    --border-color: white;
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
