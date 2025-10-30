@@ -3,6 +3,7 @@
  * CARD VIEW - PROVIDED AS EXAMPLE
  * Display data as browsable cards - good for comparing individual items
  */
+
 function showCards(data) {
   const cardHTML = data
     .map(
