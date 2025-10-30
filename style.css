@@ -6,7 +6,7 @@
     --card-background: black;
     --text-color: white;
     --border-color: white;
-    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow: white;
 }
 
 body {
@@ -41,15 +41,16 @@ body {
 }
 
 .view-button:hover {
-    background: #005a87;
+    background: grey;
 }
 
 .view-button.active {
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 .display-container {
     background: var(--card-background);
+    opacity: 25%;
     border-radius: 8px;
     padding: 2rem;
     min-height: 400px;
