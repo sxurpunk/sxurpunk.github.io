@@ -1,7 +1,7 @@
 import showCards from './editable_js/template_cards.js';
+import showCategories from './editable_js/template_category.js';
+import showStats from './editable_js/template_stats.js';
 import showTable from './editable_js/template_table.js';
-/*import showCategories from './editable_js/template_category.js';
-import showStats from './editable_js/template_stats.js';*/
 
 import loadData from './editable_js/load_data.js';
 
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       updateButtonStates("table");
     };
 
-    /*document.getElementById("btn-categories").onclick = () => {
+    document.getElementById("btn-categories").onclick = () => {
       updateDisplay(showCategories(data));
       updateButtonStates("categories");
     };
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("btn-stats").onclick = () => {
       updateDisplay(showStats(data));
       updateButtonStates("stats");
-    };*/
+    };
 
     // Show initial view
     updateDisplay(showCards(data));
