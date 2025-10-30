@@ -9,7 +9,7 @@ function showTable(data) {
             /*html*/
             (jin) => `
                 <tr class="restaurant-table">
-                    <td><strong>${jin.command}</strong></td>
+                    <th><strong>${jin.command}</strong></th>
                     <td>Damage: ${jin.damage}</td>
                 </tr>
             `
@@ -18,7 +18,7 @@ function showTable(data) {
 
     return `
                 <h2 class="view-title">Inputs</h2>
-                <p class="view-description">Inputs Only</p>
+                <p class="view-description">Inputs and Damage to reference when praciticng.</p>
                 <div class="card-grid">
                 ${listHTML}
                 </div>
