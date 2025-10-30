@@ -117,7 +117,7 @@ body {
 .restaurant-table td {
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
 }
 
 .restaurant-table th {
