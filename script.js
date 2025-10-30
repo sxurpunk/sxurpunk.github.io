@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("btn-stats").onclick = () => {
       updateDisplay(showStats(data));
-      updateButtonStates("stats");*/
-    };
+      updateButtonStates("stats");
+    };*/
 
     // Show initial view
     updateDisplay(showCards(data));
