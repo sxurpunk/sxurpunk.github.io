@@ -110,6 +110,7 @@ body {
 .restaurant-table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid var(--border-color);
     margin-top: 1rem;
 }
 
