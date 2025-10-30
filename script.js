@@ -75,14 +75,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       updateButtonStates("table");
     };
 
-    document.getElementById("btn-categories").onclick = () => {
+    /*document.getElementById("btn-categories").onclick = () => {
       updateDisplay(showCategories(data));
       updateButtonStates("categories");
     };
 
     document.getElementById("btn-stats").onclick = () => {
       updateDisplay(showStats(data));
-      updateButtonStates("stats");
+      updateButtonStates("stats");*/
     };
 
     // Show initial view
