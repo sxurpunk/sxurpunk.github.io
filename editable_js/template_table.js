@@ -3,6 +3,13 @@
  * TABLE VIEW - STUDENTS IMPLEMENT
  * Display data in sortable rows - good for scanning specific information
  */
+function showTable(data) {
+    
+  return `
+                <h2 class="view-title">Key Punishment Moves</h2>
+                <p class="view-description">Jin Kazama's core punishment tools.</p>
+            `;
+}
 
 /*const punishmentFilter = jin.filter(function (jin) {
     return jin.block_frame = '+6';
@@ -20,13 +27,5 @@ function showTable(data) {
         </div>
         `
     })*/
-
-    return `
-                <h2 class="view-title">Key Punishment Moves</h2>
-                <p class="view-description">Jin Kazama's core punishment tools.</p>
-                <div class="card-grid">
-                    ${punishmentMoves}
-            `;
-}
 
 export default showTable;
