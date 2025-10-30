@@ -123,6 +123,7 @@ body {
 .restaurant-table th {
     background: #f8f9fa;
     font-weight: 600;
+    border: 1px solid var(--border-color);
 }
 
 .restaurant-table tr:hover {
