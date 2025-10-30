@@ -12,7 +12,7 @@ function showTable(data) {
           })
               
           punishmentMoves.forEach(function (move) {
-              `
+              return`
             <div className="restaurant-card">
             <h3>${move.command}</h3>
             <p><strong>Hit Level:</strong> ${move.hit_level}</p>
