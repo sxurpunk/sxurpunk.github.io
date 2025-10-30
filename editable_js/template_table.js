@@ -8,10 +8,10 @@ function showTable(data) {
         .map(
             /*html*/
             (jin) => `
-                <div class="restaurant-card">
-                    <h3>${jin.command}</h3>
-                    <p><strong>Damage:</strong> ${jin.damage}</p>
-                </div>
+                <tr class="restaurant-table">
+                    <td><strong>${jin.command}</strong></td>
+                    <td>Damage: ${jin.damage}</td>
+                </tr>
             `
         ).join("")
     /*html*/
