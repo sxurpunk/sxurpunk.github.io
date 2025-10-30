@@ -14,6 +14,7 @@ body {
     margin: 0;
     padding: 1rem;
     background: var(--background-image);
+    background-size: cover;
     color: var(--text-color);
 }
 
@@ -50,7 +51,6 @@ body {
 
 .display-container {
     background: var(--card-background);
-    opacity: 25%;
     border-radius: 8px;
     padding: 2rem;
     min-height: 400px;
