@@ -3,28 +3,31 @@
  * TABLE VIEW - STUDENTS IMPLEMENT
  * Display data in sortable rows - good for scanning specific information
  */
-function showTable(data) {
-    const listHTML = data
+function showCards(data) {
+    const cardHTML = data
         .map(
             /*html*/
             (jin) => `
                 <div class="restaurant-card">
                     <h3>${jin.command}</h3>
+                    <p><strong>Hit Level:</strong> ${jin.hit_level}</p>
                     <p><strong>Damage:</strong> ${jin.damage}</p>
+                    <p><strong>Startup Frames:</strong> ${jin.start_up_frame}</p>
+                    <p><strong>On-Block Frames</strong> ${jin.block_frame}</p>
                 </div>
             `
         ).join("")
-
-  return `
-                <h2 class="view-title">Inputs</h2>
-                <p class="view-description">Inputs Only</p>
+    /*html*/
+    return `
+                <h2 class="view-title">All Moves</h2>
+                <p class="view-description">All of Jin Kazama's moves with inputs, damage, and frame data.</p>
                 <div class="card-grid">
-                ${listHTML}
+                ${cardHTML}
                 </div>
             `;
 }
 
-export default showTable;
+export default showCards;
 
 /*  const punishmentHTML = data
       .map(
