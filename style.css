@@ -14,7 +14,6 @@ body {
     margin: 0;
     padding: 1rem;
     background: var(--background-image);
-    background-size: cover;
     color: var(--text-color);
 }
 

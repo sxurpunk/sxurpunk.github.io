@@ -4,7 +4,41 @@
  * Display data in sortable rows - good for scanning specific information
  */
 function showTable(data) {
-  const punishmentHTML = data
+    const listHTML = data
+        .map(
+            (jin) =>
+                html += `
+                        <table>
+            <thead>
+                <tr>
+                    <th>Input</th>
+                    <th>Damage</th>
+                </tr>
+            </thead>
+            <tbody>
+                `,
+        
+            data.forEach(function (jin) {
+                html += `
+                            <tr>
+                <td><strong>${jin.command}</strong></td>
+                <td>${jin.damage}</td>
+            </tr>
+                `
+            })
+            
+        ).join("")
+
+  return `
+                <h2 class="view-title">Inputs</h2>
+                <p class="view-description">Inputs Only</p>
+                <div class="card-grid">
+                ${listHTML}
+                </div>
+            `;
+}
+
+/*  const punishmentHTML = data
       .map(
           (jin) => {
           const punishmentMoves = jin.filter(function (jin) {
@@ -23,14 +57,6 @@ function showTable(data) {
   `
           })}
               
-      ).join("")
-  return `
-                <h2 class="view-title">Key Punishment Moves</h2>
-                <p class="view-description">Jin Kazama's core punishment tools.</p>
-                <div class="card-grid">
-                ${punishmentHTML}
-                </div>
-            `;
-}
+      ).join("")*/
 
 export default showTable;
