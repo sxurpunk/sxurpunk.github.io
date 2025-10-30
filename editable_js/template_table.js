@@ -4,8 +4,8 @@
  * Display data in sortable rows - good for scanning specific information
  */
 
-const punishmentFilter = jin.filter(function (punishment) {
-    return punishment.block_frame = '+6';
+const punishmentFilter = jin.filter(function (jin) {
+    return jin.block_frame = '+6';
 })
 
 function showTable(data) {
