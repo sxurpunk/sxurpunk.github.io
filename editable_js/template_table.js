@@ -24,6 +24,8 @@ function showTable(data) {
             `;
 }
 
+export default showTable;
+
 /*  const punishmentHTML = data
       .map(
           (jin) => {
@@ -68,5 +70,3 @@ function showTable(data) {
             })
             
         ).join("")*/
-
-export default showTable;

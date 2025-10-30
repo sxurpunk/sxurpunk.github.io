@@ -23,7 +23,7 @@ function showCards(data) {
                 <h2 class="view-title">All Moves</h2>
                 <p class="view-description">All of Jin Kazama's moves with inputs, damage, and frame data.</p>
                 <div class="card-grid">
-                    ${cardHTML}
+                ${cardHTML}
                 </div>
             `;
 }
