@@ -6,27 +6,13 @@
 function showTable(data) {
     const listHTML = data
         .map(
-            (jin) =>
-                html += `
-                        <table>
-            <thead>
-                <tr>
-                    <th>Input</th>
-                    <th>Damage</th>
-                </tr>
-            </thead>
-            <tbody>
-                `,
-        
-            data.forEach(function (jin) {
-                html += `
-                            <tr>
-                <td><strong>${jin.command}</strong></td>
-                <td>${jin.damage}</td>
-            </tr>
-                `
-            })
-            
+            /*html*/
+            (jin) => `
+                <div class="restaurant-card">
+                    <h3>${jin.command}</h3>
+                    <p><strong>Damage:</strong> ${jin.damage}</p>
+                </div>
+            `
         ).join("")
 
   return `
@@ -58,5 +44,29 @@ function showTable(data) {
           })}
               
       ).join("")*/
+
+/*        .map(
+            (jin) =>
+                html += `
+                        <table>
+            <thead>
+                <tr>
+                    <th>Input</th>
+                    <th>Damage</th>
+                </tr>
+            </thead>
+            <tbody>
+                `,
+        
+            data.forEach(function (jin) {
+                html += `
+                            <tr>
+                <td><strong>${jin.command}</strong></td>
+                <td>${jin.damage}</td>
+            </tr>
+                `
+            })
+            
+        ).join("")*/
 
 export default showTable;
