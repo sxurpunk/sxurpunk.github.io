@@ -8,9 +8,13 @@
     
 </head>
   <body>
-  <audio controls autoplay loop>
+  <audio controls autoplay loop id="yoursunset">
       <source src = "music/Your%20Sunset%204.mp3" type="audio/mp3">
   </audio>
+  <script>
+      var audio = document.getElementById("yoursunset")
+      audio.volume = 0.3
+  </script>
   
     <div class="container">
         <header>
