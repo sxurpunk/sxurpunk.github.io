@@ -17,7 +17,7 @@ function showTable(data) {
 
     return `
                 <h2 class="view-title">Inputs</h2>
-                <p class="view-description">Inputs to reference when praciticng.</p>
+                <p class="view-description">Inputs to reference when practicing.</p>
                 <div class="card-grid">
                 ${listHTML}
                 </div>
