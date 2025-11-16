@@ -13,7 +13,12 @@ const categoriesHTML = data        .map(
             `
     ).join("")
   return `
-            
+           <h2 class="view-title">Hit Level</h2>
+            <p class="view-description">Moves with their hit level to reference when practicing.</p>
+            <p class="view-description">h = high, m = mid, l = low</p>
+            <div class="card-grid">
+            ${listHTML}
+            </div>
             `;
 }
 
