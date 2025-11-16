@@ -7,8 +7,8 @@ function showStats(data) {
         /*html*/
         (jin) => `
                 <tr class="restaurant-table">
-                    <th><strong>${jin.start_up_frame}</strong></th>
-                    <th>${jin.hit_level}</th>
+                    <th><strong>${jin.command}</strong></th>
+                    <th>${jin.start_up_frame}</th>
                     <th>${jin.block_frame}</th>
                 </tr>
             `
