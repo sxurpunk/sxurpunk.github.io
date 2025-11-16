@@ -10,6 +10,7 @@ function showTable(data) {
             (jin) => `
                 <tr class="restaurant-table">
                     <th><strong>${jin.command}</strong></th>
+                    <th>${jin.damage}</th>
                 </tr>
             `
         ).join("")
@@ -17,7 +18,7 @@ function showTable(data) {
 
     return `
                 <h2 class="view-title">Inputs</h2>
-                <p class="view-description">Inputs to reference when practicing.</p>
+                <p class="view-description">Moves with their Damage to reference when practicing.</p>
                 <div class="card-grid">
                 ${listHTML}
                 </div>
