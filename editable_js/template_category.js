@@ -6,7 +6,7 @@ function showCategories(data) {
 const categoriesHTML = data
     .map(
         (jin) => 
-          const targetName = h;
+          const targetName = "h";
             const foundItem = jin.find(jin => jin.hit_level === targetName);
             `
             <h3>${foundItem.command}</h3>
