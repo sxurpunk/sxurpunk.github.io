@@ -17,7 +17,7 @@ function showStats(data) {
            <h2 class="view-title">Frame Data</h2>
             <p class="view-description">Moves with their frame data to reference when practicing.</p>
             <div class="card-grid">
-            ${listHTML}
+            ${statsHTML}
             </div>
             `;
 }

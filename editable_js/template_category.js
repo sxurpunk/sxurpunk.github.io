@@ -17,7 +17,7 @@ const categoriesHTML = data        .map(
             <p class="view-description">Moves with their hit level to reference when practicing.</p>
             <p class="view-description">h = high, m = mid, l = low</p>
             <div class="card-grid">
-            ${listHTML}
+            ${categoriesHTML}
             </div>
             `;
 }
