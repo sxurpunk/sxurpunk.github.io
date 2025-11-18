@@ -6,7 +6,7 @@ function showStats(data) {
     const statsHTML = data        .map(
         /*html*/
         (jin) => `
-                <tr class="restaurant-table">
+                <table class="framedata-table">
                     <th><strong>${jin.command}</strong></th>
                     <th>${jin.start_up_frame}</th>
                     <th>${jin.block_frame}</th>
