@@ -21,12 +21,6 @@ function showCards(data) {
         
     ).join("")
     
-    gsap.to(".restaurant-card", {
-        duration: 2,
-        x: 200,
-        rotation: 360,
-    });
-    
      /*html*/ 
   return `
                 <h2 class="view-title">All Moves</h2>

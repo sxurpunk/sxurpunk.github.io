@@ -9,11 +9,10 @@ import loadData from './editable_js/load_data.js';
 // DISPLAY MANAGEMENT - PROVIDED
 // ============================================
 
-/**
- * Update the display with new content
- */
+const cardDisplay = document.getElementById("data-display");
+
 function updateDisplay(content) {
-  document.getElementById("data-display").innerHTML = content;
+  cardDisplay.innerHTML = content;
 }
 
 /**
@@ -68,26 +67,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("btn-cards").onclick = () => {
       updateDisplay(showCards(data));
       updateButtonStates("cards");
+      gsap.from(cardDisplay, {opacity: 0, duration: 1, ease: "bounce"});
     };
 
     document.getElementById("btn-table").onclick = () => {
       updateDisplay(showTable(data));
       updateButtonStates("table");
+      gsap.from(cardDisplay, {opacity: 0, duration: 1, ease: "bounce"});
     };
 
     document.getElementById("btn-categories").onclick = () => {
       updateDisplay(showCategories(data));
       updateButtonStates("categories");
+      gsap.from(cardDisplay, {opacity: 0, duration: 1, ease: "bounce"});
     };
 
     document.getElementById("btn-stats").onclick = () => {
       updateDisplay(showStats(data));
       updateButtonStates("stats");
+      gsap.from(cardDisplay, {opacity: 0, duration: 1, ease: "bounce"});
     };
 
     // Show initial view
     updateDisplay(showCards(data));
     updateButtonStates("cards");
+    gsap.from(cardDisplay, {opacity: 0, duration: 1});
 
     console.log("Application ready!");
   } catch (error) {
