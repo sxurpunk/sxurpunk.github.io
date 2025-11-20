@@ -1,3 +1,12 @@
+/*
+REFLECTION: I had quite ambitious ideas for the project, but ended up not dedicating enough of my time towards it. I am
+a bit dissapointed with the final outcome, as I only really did the bare minimum required to satisfy the project requirements
+but it still helped me learn a lot about using API's, general dataset structure, and using external libraries like GSAP. I plan
+to make my next project match my initial ambitious ideas, and will take my struggles with this one into the next to make it
+my best work yet.
+ */
+
+
 import showCards from './editable_js/template_cards.js';
 import showCategories from './editable_js/template_category.js';
 import showStats from './editable_js/template_stats.js';
