@@ -5,6 +5,7 @@
  */
 
 function showCards(data) {
+    
   const cardHTML = data
     .map(
        /*html*/ 
@@ -17,7 +18,15 @@ function showCards(data) {
                     <p><strong>On-Block Frames</strong> ${jin.block_frame}</p>
                 </div>
             `
+        
     ).join("")
+    
+    gsap.to(".restaurant-card", {
+        duration: 2,
+        x: 200,
+        rotation: 360,
+    });
+    
      /*html*/ 
   return `
                 <h2 class="view-title">All Moves</h2>
